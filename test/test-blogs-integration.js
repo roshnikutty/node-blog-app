@@ -9,7 +9,7 @@ const {Blog} = require('../models');
 const {app, runServer, closeServer} = require('../server');
 const {TEST_DATABASE_URL} = require('../config');
 
-chai.use(ChaiHttp);
+chai.use(chaiHttp);
 
 function seedBlogData(){
     const seedData = [];
