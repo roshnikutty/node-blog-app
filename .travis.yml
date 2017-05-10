@@ -1,4 +1,12 @@
 language: node_js
 node_js: node
-services: 
+services:
 - mongodb
+deploy:
+  provider: heroku
+  api_key:
+    secure: E+P3b0JrSHbvdvPUebnNRoOB6RevUwFmkbPRgP3l2F5sVbzx5j7S3/Lkat2PgAGj7E74shte5Y6V2YjV8YzFrjvYOW+mh9s4E/Mrw+imI1XsoN+8ByCDD6JvZP/uFZCYFh7KT3lhAssK9AddB8tgQ0m7c6NQIPoRTcfWO58g0+uk4zNh12KsbN2uYJN0eRDZzKmcdoigTMXibwnuG8HHEoWzWFR4D3LJJnzo7BdgD/G4vj7vwM2u+Nry+ORJhK8qZ3ZfgoQt9+wbucs/h8GaxgKjOaE0zrvn5FxK1k1JDWGYFRcTkOOeDQdNr6/E0WHDlWcuLpNPwAn3XF2AqzMdLwyglXTh5PaPQ6KbA5t49CSA6DdSG6B5OTAwguRfqdP9S0sU4p9LgU4IU3SlzU1uAevIsJTThBUIqgZZJiBGlvwFfqU+4HWg+LinvlgPKnBM8a8CACQrZeDQum/V0G3MDsZSr9ESBI0zK2UkRVU0pgwQaHVlwJmbC8ourb5sK5fxgyIRU0IT61LSc+YQNZaXiudsVluGf17/H5uLdAV3EiUMm1ZfkSMXNht6ygmSqHwgmf8u4OfPcyEi8XDEWXeAchxIGC5Ku1fkxnjrnQexd9dYd8cfVDRCb76YiBYcy+t2wTw9svoi85Lu2dMshNlIrIeynGFlXiprreYnSaLKNdE=
+  app: shielded-beach-88313
+  on:
+    repo: roshnikutty/node-blog-app
+    branch: test
