@@ -12,6 +12,7 @@ const {TEST_DATABASE_URL} = require('../config');
 chai.use(chaiHttp);
 
 function seedBlogData(){
+  console.info('seeding restaurant data');
     const seedData = [];
     for (let i = 1; i<0; i++){
         seedData.push(generateBlogData());
