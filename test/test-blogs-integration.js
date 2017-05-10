@@ -33,7 +33,7 @@ function generateBlogData(){
             firstName:faker.Name.firstName(),
             lastName:faker.Name.lastName()
         }
-    };
+    }
 }
 
 describe('Blogs API resource', function() {
