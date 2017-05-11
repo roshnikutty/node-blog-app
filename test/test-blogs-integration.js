@@ -63,6 +63,7 @@ describe('Blogs API resource', function() {
       return chai.request(app)
         .get('/blogs')
         .then(function(_res) {
+           console.log(_res);
           res = _res;
           res.should.have.status(200);
           // res.body.blogs.should.have.length.of.at.least(1);
