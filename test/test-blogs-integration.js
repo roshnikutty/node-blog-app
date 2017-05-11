@@ -27,11 +27,11 @@ function tearDownDb() {
 
 function generateBlogData(){
     return {
-        title:faker.Lorem.words(),
-        content:faker.Lorem.sentence(),
+        title:faker.lorem.words(),
+        content:faker.lorem.sentence(),
         author:{
-            firstName:faker.Name.firstName(),
-            lastName:faker.Name.lastName()
+            firstName:faker.name.firstName(),
+            lastName:faker.name.lastName()
         }
     }
 }
