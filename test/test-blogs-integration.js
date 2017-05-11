@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 
 const should = chai.should();
 
+const {DATABASE_URL} = require('../config');
 const {Blog} = require('../models');
 const {app, runServer, closeServer} = require('../server');
 const {TEST_DATABASE_URL} = require('../config');
@@ -66,7 +67,7 @@ describe('Blogs API resource', function() {
            console.log(_res);
           res = _res;
           res.should.have.status(200);
-          // res.body.blogs.should.have.length.of.at.least(1);
+          res.body.blogs.should.have.length.of.at.least(1);
           return Blog.count();
         })
         .then(function(count) {
@@ -85,7 +86,7 @@ describe('Blogs API resource', function() {
           res.should.have.status(200);
           res.should.be.json;
           res.body.blogs.should.be.a('array');
-          // res.body.blogs.should.have.length.of.at.least(1);
+          res.body.blogs.should.have.length.of.at.least(1);
 
           res.body.blogs.forEach(function(blog) {
             blog.should.be.a('object');
@@ -149,7 +150,11 @@ describe('Blogs API resource', function() {
     it('should update fields you send over', function() {
       const updateData = {
         title: 'fofofofofofofof',
-        content: 'Testing 1, 2, 3..'
+        content: 'Testing 1, 2, 3..',
+        author: {
+          firstName: "TestfirstName",
+          lastName: "TestlastName"
+        }
       };
 
       return Blog
@@ -170,6 +175,7 @@ describe('Blogs API resource', function() {
         .then(function(blog) {
           blog.title.should.equal(updateData.title);
           blog.content.should.equal(updateData.content);
+          blog.author.should.equal(`${updateData.author.firstName} ${updateData.author.lastName}`);
         });
       });
   });
