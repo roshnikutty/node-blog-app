@@ -2,10 +2,10 @@ const mongoose = require('mongoose');
 
 
 const blogSchema = mongoose.Schema({
-    name: { type: String, required: true },
+    title: { type: String, required: true },
     content: { type: String, required: true },
     author: {
-        fistName: String,
+        firstName: String,
         lastName: String
     }
 });

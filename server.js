@@ -51,7 +51,7 @@ app.post('/blogs', (req, res) => {
 
     Blog
         .create({
-            name: req.body.name,
+            title: req.body.title,
             content: req.body.content,
             author: {
                 firstName: req.body.author.firstName,
